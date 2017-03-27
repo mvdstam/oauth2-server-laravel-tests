@@ -9,5 +9,9 @@ docker:
 	docker-compose rm -f
 	docker-compose up -d --force-recreate --remove-orphans
 
+db:
+	docker-compose exec app sh -c "php artisan vendor:publish"
+	docker-compose exec app sh -c "php artisan migrate"
+
 tests:
 	jasmine-node spec/
