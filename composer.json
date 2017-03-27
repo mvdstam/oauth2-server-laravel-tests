@@ -10,7 +10,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "mvdstam/oauth2-server-laravel": "dev-master"
+        "mvdstam/oauth2-server-laravel": "dev-master",
+        "laravel/framework": "~5.1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0",
