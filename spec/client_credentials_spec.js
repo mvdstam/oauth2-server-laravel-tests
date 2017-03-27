@@ -1,32 +1,32 @@
 var frisby = require('frisby'),
-    jwt = require('jsonwebtoken'),
-    fs = require('fs'),
+    common = require('./common'),
+    client = require('./client');
 
-    clientID = '660cdc84-7413-485f-859f-d689154bb920',
-    clientSecret = '13320e3b-a2d2-4451-88f3-769b3c8d845f';
-
-var validateToken = function(err, res, body) {
-    jwt.verify(
-        JSON.parse(body).access_token,
-        fs.readFileSync('id_rsa.pub'),
-        {
-            issuer: 'http://localhost:8080',
-            audience: clientID
-        }
-    );
-};
-
-frisby.create('Client Credentials grant')
+frisby.create('[Client Credentials] Request access token with valid credentials returns access token')
     .post('http://localhost:8080/oauth2/access_token', {
         grant_type: 'client_credentials'
     })
     .addHeader(
         'Authorization',
-        'Basic ' + new Buffer([clientID, clientSecret].join(':')).toString('base64')
+        common.getAuthenticationHeaderValue(client.id, client.secret)
     )
     .expectStatus(200)
     .expectJSON({
         token_type: 'Bearer'
     })
-    .after(validateToken)
+    .afterJSON(common.validateToken)
+    .toss();
+
+frisby.create('[Client Credentials] Request access token with invalid credentials returns HTTP-400')
+    .post('http://localhost:8080/oauth2/access_token', {
+        grant_type: 'client_credentials'
+    })
+    .addHeader(
+        'Authorization',
+        common.getAuthenticationHeaderValue('foo', 'bar')
+    )
+    .expectStatus(401)
+    .expectJSON({
+        error: 'invalid_client'
+    })
     .toss();
