@@ -6,13 +6,13 @@ frisby.create('Client Credentials grant')
     })
     .addHeader(
         'Authorization',
-        new Buffer([
+        'Basic ' + new Buffer([
             '660CDC84-7413-485F-859F-D689154BB920',
             '13320E3B-A2D2-4451-88F3-769B3C8D845F'
         ].join(':')).toString('base64')
     )
     .expectStatus(200)
-    .expectJson({
-        token_type: 'bearer'
+    .expectJSON({
+        token_type: 'Bearer'
     })
     .toss();
