@@ -1,0 +1,25 @@
+{
+    "name": "mvdstam/oauth2-server-laravel-tests",
+    "description": "Integration tests to ensure compatibility of the mvdstam/oauth2-server-laravel package with several versions of Laravel/Lumen",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max van der Stam",
+            "email": "max@vanderstam.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "mvdstam/oauth2-server-laravel": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "mockery/mockery": "^0.9.9"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/mvdstam/oauth2-server-laravel.git"
+        }
+    ]
+}
