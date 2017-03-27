@@ -12,10 +12,6 @@
     "require": {
         "mvdstam/oauth2-server-laravel": "dev-master"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^6.0",
-        "mockery/mockery": "^0.9.9"
-    },
     "repositories": [
         {
             "type": "vcs",
