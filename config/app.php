@@ -145,6 +145,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * OAuth2 Server
+         */
+        \Mvdstam\Oauth2ServerLaravel\Providers\Oauth2ServerServiceProvider::class,
+
     ],
 
     /*
