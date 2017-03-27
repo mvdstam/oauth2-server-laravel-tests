@@ -8,3 +8,6 @@ docker:
 	docker-compose stop
 	docker-compose rm -f
 	docker-compose up -d --force-recreate --remove-orphans
+
+tests:
+	jasmine-node spec/
