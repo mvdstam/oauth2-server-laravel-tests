@@ -1,0 +1,23 @@
+{
+  "name": "oauth2-server-laravel-tests",
+  "version": "1.0.0",
+  "description": "Testsuite for the OAuth2 laravel bridge",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "frisby": "^0.8.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvdstam/oauth2-server-laravel-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvdstam/oauth2-server-laravel-tests/issues"
+  },
+  "homepage": "https://github.com/mvdstam/oauth2-server-laravel-tests#readme"
+}
