@@ -72,5 +72,10 @@ return [
     'paths' => [
         'access_token' => 'oauth2/access_token',
         'authorize' => 'oauth2/authorize'
-    ]
+    ],
+
+    /*
+     * Controller name for your OAuth server
+     */
+    'controller' => \App\Http\Controllers\OAuth2Controller::class
 ];
