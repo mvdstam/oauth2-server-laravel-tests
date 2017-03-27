@@ -14,4 +14,4 @@ db:
 	docker-compose exec app sh -c "php artisan migrate"
 
 tests:
-	jasmine-node spec/
+	jasmine-node spec/oauth
