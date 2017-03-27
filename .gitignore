@@ -2,3 +2,4 @@ composer.lock
 /vendor/
 /bootstrap/cache/
 /storage/framework/
+/node_modules/
