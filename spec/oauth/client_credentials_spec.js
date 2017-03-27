@@ -1,6 +1,6 @@
 var frisby = require('frisby'),
-    common = require('./common'),
-    client = require('./client');
+    common = require('../common'),
+    client = require('../client');
 
 frisby.create('[Client Credentials] Request access token with valid credentials returns access token')
     .post('http://localhost:8080/oauth2/access_token', {
