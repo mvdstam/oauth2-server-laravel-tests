@@ -6,7 +6,7 @@ module.exports = {
     validateToken: function(body) {
         jwt.verify(
             body.access_token,
-            fs.readFileSync('id_rsa.pub'),
+            fs.readFileSync('public.pem'),
             {
                 issuer: 'http://localhost:8080',
                 audience: client.id
