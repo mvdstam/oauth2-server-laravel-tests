@@ -1,6 +1,7 @@
 var jwt = require('jsonwebtoken'),
     fs = require('fs'),
-    client = require('./client');
+    client = require('./client'),
+    crypto = require('crypto');
 
 module.exports = {
     validateToken: function(body) {
@@ -16,5 +17,9 @@ module.exports = {
 
     getAuthenticationHeaderValue: function(username, password) {
         return 'Basic ' + new Buffer([username, password].join(':')).toString('base64');
+    },
+
+    nonce: function() {
+        return new Buffer(crypto.randomBytes(48)).toString('base64');
     }
-}
+};
