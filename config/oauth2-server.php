@@ -10,8 +10,9 @@ return [
      * anyone.
      */
     'key' => [
-        'public' => '/var/www/html/id_rsa.pub',
-        'private' => '/var/www/html/id_rsa'
+        'public' => '/var/www/html/public.pem',
+        'private' => '/var/www/html/private.pem',
+        'passphrase' => 'oauth'
     ],
 
     /*
