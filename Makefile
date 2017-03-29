@@ -17,5 +17,5 @@ db:
 
 tests:
 	mkdir -p storage/framework/sessions bootstrap/cache
-	chmod -R 777 storage/framework/sessions
+	sudo chmod -R 777 storage/framework/sessions bootstrap/cache
 	docker-compose run nodejs sh -c "cd /usr/src/app && npm install -g jasmine-node && jasmine-node spec/oauth ; (exit $?)"
