@@ -3,7 +3,7 @@ deps:
 	composer install
 	npm install
 	mkdir -p storage/framework/sessions bootstrap/cache
-	sudo chmod -R 777 storage/framework/sessions bootstrap/cache
+	chmod -R 777 storage/framework/sessions bootstrap/cache
 
 docker:
 	docker build --tag oauth2-server-laravel .
