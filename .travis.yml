@@ -10,10 +10,10 @@ before_install:
 
 script:
   - make tests
-  -	ls -l storage
-  -	ls -l storage/logs
-  -	cat storage/logs/laravel.log
-  -	docker-compose logs app
+  -	"ls -l storage"
+  -	"ls -l storage/logs"
+  -	"cat storage/logs/laravel.log"
+  -	"docker-compose logs app"
 
 branches:
   only:
