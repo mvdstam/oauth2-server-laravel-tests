@@ -6,7 +6,7 @@ docker:
 	docker build --tag oauth2-server-laravel .
 	docker-compose stop
 	docker-compose rm -f
-	docker-compose up -d --force-recreate --remove-orphans
+	docker-compose up -d --force-recreate --remove-orphans app mysql
 
 db:
 	docker-compose exec app sh -c "php artisan vendor:publish ; (exit $?)"
