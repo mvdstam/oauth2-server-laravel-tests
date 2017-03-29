@@ -5,7 +5,7 @@ var frisby = require('frisby'),
     expect = require('expect');
 
 frisby.create('[Refresh token] Request access token with valid credentials returns access token')
-    .post('http://localhost:8080/oauth2/access_token', {
+    .post('http://app/oauth2/access_token', {
         grant_type: 'password',
         username: 'testuser',
         password: 'testpass'
@@ -22,7 +22,7 @@ frisby.create('[Refresh token] Request access token with valid credentials retur
         common.validateToken(accessToken);
 
         frisby.create('[Refresh token] Request access token with valid refresh token returns access token')
-            .post('http://localhost:8080/oauth2/access_token', {
+            .post('http://app/oauth2/access_token', {
                 grant_type: 'refresh_token',
                 refresh_token: accessToken.refresh_token
             })

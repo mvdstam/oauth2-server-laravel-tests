@@ -9,7 +9,7 @@ module.exports = {
             body.access_token,
             fs.readFileSync('public.pem'),
             {
-                issuer: 'http://localhost:8080',
+                issuer: 'http://app',
                 audience: client.id
             }
         );
