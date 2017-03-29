@@ -13,7 +13,6 @@ services:
     image: node:alpine
     volumes:
       - .:/usr/src/app
-    restart: unless-stopped
     depends_on:
       - app
 
