@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        \Mvdstam\Oauth2ServerLaravel\Providers\Oauth2ServerServiceProvider::class
     ],
 
     /*
