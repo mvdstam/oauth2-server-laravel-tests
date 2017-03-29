@@ -1,5 +1,6 @@
 deps:
 	rm -rf vendor/ node_modules/ composer.lock
+	mkdir bootstrap/cache
 	composer install
 
 docker:
