@@ -1,6 +1,6 @@
 deps:
 	rm -rf vendor/ node_modules/ composer.lock
-	sudo chown -R 775 bootstrap/cache
+	sudo chown -R 775 bootstrap
 	composer install
 
 docker:
