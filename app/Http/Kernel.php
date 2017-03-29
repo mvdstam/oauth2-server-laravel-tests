@@ -3,6 +3,8 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Session\Middleware\StartSession;
+use Mvdstam\Oauth2ServerLaravel\Http\Middleware\OAuth2Middleware;
 
 class Kernel extends HttpKernel
 {
@@ -14,7 +16,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        StartSession::class
     ];
 
     /**
@@ -44,10 +46,6 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'oauth2' => OAuth2Middleware::class
     ];
 }
