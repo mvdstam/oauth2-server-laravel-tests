@@ -164,11 +164,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-        Laravel\Tinker\TinkerServiceProvider::class,
-
-        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -176,6 +171,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        \Mvdstam\Oauth2ServerLaravel\Providers\Oauth2ServerServiceProvider::class
 
     ],
 
