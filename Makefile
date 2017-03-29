@@ -1,6 +1,7 @@
 deps:
 	rm -rf vendor/ node_modules/ composer.lock
-	sudo chown -R 775 bootstrap
+	mkdir -p bootstrap/cache storage/logs
+	sudo chown -R 775 bootstrap/cache storage/logs
 	composer install
 
 docker:
@@ -17,4 +18,4 @@ db:
 
 tests:
 	docker-compose run nodejs sh -c "cd /usr/src/app ; npm install ; npm install -g jasmine-node ; jasmine-node spec/oauth ; (exit $?)"
-	cat storage/framework/laravel.log
+	cat storage/log/laravel.log
