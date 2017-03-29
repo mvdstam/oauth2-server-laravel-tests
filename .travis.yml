@@ -1,0 +1,16 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - make docker
+  - make deps
+  - make db
+
+script:
+  - make tests
+
+branches:
+  only:
+    - /^laravel-.*$/
