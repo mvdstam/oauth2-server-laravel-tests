@@ -17,3 +17,4 @@ db:
 
 tests:
 	docker-compose run nodejs sh -c "cd /usr/src/app ; npm install ; npm install -g jasmine-node ; jasmine-node spec/oauth ; (exit $?)"
+	cat storage/framework/logs/laravel.log
