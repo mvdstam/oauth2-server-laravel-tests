@@ -5,10 +5,10 @@ var frisby = require('frisby'),
     expect = require('expect');
 
 var nonce = common.nonce(),
-    redirectUri = 'http://localhost:8080';
+    redirectUri = 'http://app';
 
 frisby.create('[Implicit] Initiate authorization process')
-    .get('http://localhost:8080/oauth2/authorize?'+querystring.stringify({
+    .get('http://app/oauth2/authorize?'+querystring.stringify({
         response_type: 'token',
         client_id: client.id,
         redirect_uri: redirectUri,
@@ -19,7 +19,7 @@ frisby.create('[Implicit] Initiate authorization process')
         expect(res.headers).toIncludeKey('set-cookie');
 
         frisby.create('[Implicit] Complete authorization by logging in')
-            .post('http://localhost:8080/oauth2/authorize', {
+            .post('http://app/oauth2/authorize', {
                 login: {
                     username: 'testuser',
                     password: 'testpass'
