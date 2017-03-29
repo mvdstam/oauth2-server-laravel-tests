@@ -1,7 +1,7 @@
 deps:
 	rm -rf vendor/ node_modules/ composer.lock
-	mkdir -p bootstrap/cache storage/logs
-	chmod -R 755 bootstrap/cache storage/logs
+	mkdir -p bootstrap/cache storage/logs storage/framework/sessions
+	chmod -R 755 bootstrap/cache storage/logs storage/framework/sessions
 	composer install
 
 docker:
