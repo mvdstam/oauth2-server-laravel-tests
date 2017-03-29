@@ -1,7 +1,7 @@
 deps:
 	rm -rf vendor/ node_modules/ composer.lock
 	mkdir -p bootstrap/cache storage/logs
-	sudo chown -R 775 bootstrap/cache storage/logs
+	chmod -R 755 bootstrap/cache storage/logs
 	composer install
 
 docker:
@@ -17,5 +17,4 @@ db:
 	docker-compose exec app sh -c "php artisan oauth2-server:create-user --username 'testuser' --password 'testpass' ; (exit $?)"
 
 tests:
-	docker-compose run nodejs sh -c "cd /usr/src/app ; npm install ; npm install -g jasmine-node ; jasmine-node spec/oauth ; (exit $?)"
-	cat storage/log/laravel.log
+	docker-compose run nodejs sh -c "cd /usr/src/app ; npm install ; npm install -g jasmine-node ; jasmine-node spec/oauth ; (exit $?)" || cat storage/logs/laravel.log
