@@ -3,7 +3,7 @@ var frisby = require('frisby'),
     client = require('../client');
 
 frisby.create('[Client Credentials] Request access token with valid credentials returns access token')
-    .post('http://localhost:8080/oauth2/access_token', {
+    .post('http://app/oauth2/access_token', {
         grant_type: 'client_credentials'
     })
     .addHeader(
@@ -18,7 +18,7 @@ frisby.create('[Client Credentials] Request access token with valid credentials 
     .toss();
 
 frisby.create('[Client Credentials] Request access token with invalid credentials returns HTTP-401')
-    .post('http://localhost:8080/oauth2/access_token', {
+    .post('http://app/oauth2/access_token', {
         grant_type: 'client_credentials'
     })
     .addHeader(
