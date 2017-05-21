@@ -6,11 +6,13 @@ services:
     volumes:
       - .:/var/www/html
     restart: unless-stopped
+    environment:
+      - KEY_PASSPHRASE=secret_passphrase
     depends_on:
       - mysql
 
   nodejs:
-    image: node:alpine
+    image: node:7.10-alpine
     volumes:
       - .:/usr/src/app
     depends_on:
