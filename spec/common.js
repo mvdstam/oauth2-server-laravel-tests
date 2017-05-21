@@ -7,7 +7,7 @@ module.exports = {
     validateToken: function(body) {
         jwt.verify(
             body.access_token,
-            fs.readFileSync('public.pem'),
+            fs.readFileSync('storage/app/oauth2-server/public.pem'),
             {
                 issuer: 'http://app',
                 audience: client.id

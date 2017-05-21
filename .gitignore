@@ -1,3 +1,5 @@
 composer.lock
 /vendor/
 /node_modules/
+/storage/app/oauth2-server/
+/database/migrations/*
