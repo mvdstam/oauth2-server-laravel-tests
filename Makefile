@@ -14,6 +14,7 @@ docker:
 db:
 	docker-compose exec app sh -c "php artisan vendor:publish ; (exit $?)"
 	docker-compose exec app sh -c "php artisan migrate ; (exit $?)"
+	docker-compose exec app sh -c "php artisan oauth2-server:generate-key-pair secret_passphrase ; (exit $?)"
 	docker-compose exec app sh -c "php artisan oauth2-server:create-client --id '660cdc84-7413-485f-859f-d689154bb920' --secret '13320e3b-a2d2-4451-88f3-769b3c8d845f' --name 'Test Client' ; (exit $?)"
 	docker-compose exec app sh -c "php artisan oauth2-server:create-user --username 'testuser' --password 'testpass' ; (exit $?)"
 
